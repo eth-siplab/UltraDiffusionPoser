@@ -1,13 +1,19 @@
-# Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking from Sparse Inertial Sensors and Ranging-based Between-sensor Distances (CVPR 2026)
+<div align="center">
 
-[Dominik Hollidt](), [Tommaso Bendinelli](), [Christian Holz](https://www.christianholz.net)<br/>
+<h1>Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking from Sparse Inertial Sensors and Ranging-based Between-sensor Distances (CVPR 2026)</h1>
 
-[Sensing, Interaction & Perception Lab](https://siplab.org), Department of Computer Science, ETH Zürich, Switzerland <br/>
+<p>
+	Dominik Hollidt, Tommaso Bendinelli, <a href="https://www.christianholz.net">Christian Holz</a><br>
+	<a href="https://siplab.org">Sensing, Interaction & Perception Lab</a>, Department of Computer Science, ETH Zürich, Switzerland<br>
+	<a href="https://siplab.org/projects/UltraDiffusionPoser">Project Page</a>
+</p>
 
-Abstract
-----------
+</div>
+
+## Abstract
+
 Methods using inertial measurement units (IMUs) provide a wearable alternative to camera-based motion capture.
-To mitigate drift from inertial signals, recent sparse inertial pose estimators integrate inter-sensor distances measured by ultra-wideband (UWB) ranging. 
+To mitigate drift from inertial signals, recent sparse inertial pose estimators integrate inter-sensor distances measured by ultra-wideband (UWB) ranging.
 So far, UWB distances have only been used as an additional input feature, ignoring the physical constraints they impose on sensor positions.
 However, these distances can also be used to reconstruct the underlying 3D sensor layout, which in turn provides more informative input for pose reconstruction.
 We propose Ultra Diffusion Poser, a diffusion model that explicitly models these geometric constraints.
@@ -17,5 +23,22 @@ Still, network predictions can violate inter-sensor distance measurements.
 To address this, we introduce UWB-Diffusion Guidance, which encourages alignment between predicted poses and measured distances during diffusion sampling.
 Together, these contributions enable our model to achieve state-of-the-art performance, reducing joint position error by up to 22\% over prior work.
 
-### Code
+<p align="center">
+	<img src="figures/main_figure.png" alt="Main figure" width="900">
+</p>
+
+## Citation
+
+```bibtex
+@inproceedings{hollidt2026ultra,
+	title={Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking from Sparse Inertial Sensors and Ranging-based Between-sensor Distances},
+	author={Hollidt, Dominik and Bendinelli, Tommaso and Holz, Christian},
+	booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+	pages={7036--7046},
+	year={2026}
+}
+```
+
+## Code
+
 coming soon
