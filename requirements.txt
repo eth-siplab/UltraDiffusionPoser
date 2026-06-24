@@ -1,0 +1,46 @@
+# UDP runtime dependencies — debloated to only what the repo actually imports
+# (verified by scanning every `import`/`from` in the codebase against the working env).
+#
+# Install order matters (see install.sh):
+#   1. torch / torchvision   -> from the CUDA wheel index, NOT here
+#   2. numpy + cython        -> needed to build chumpy
+#   3. chumpy==0.70          -> pip install --no-build-isolation (imports numpy at build)
+#   4. this file
+#
+# Pinned to the versions of the known-good environment (Python 3.8).
+
+# --- numerics / core ---
+numpy==1.23.1
+scipy==1.10.1
+matplotlib==3.7.5
+tqdm==4.66.4
+ConfigArgParse==1.7
+einops==0.8.0
+easydict==1.13
+prettytable==3.10.0
+
+# --- SMPL body model ---
+smplx==0.1.28
+
+# --- visualization / headless rendering (training previews + plots) ---
+aitviewer==1.13.0
+moderngl==5.10.0
+moderngl-window==2.4.6
+trimesh==3.23.5
+pyrender==0.1.45
+usd-core==24.5
+roma==1.5.0
+plotly==5.24.1
+opencv-contrib-python-headless==4.10.0.84
+
+# --- physics optimizer (used together with the compiled rbdl python bindings) ---
+pybullet==3.2.6
+qpsolvers==4.3.2
+
+# --- logging ---
+wandb==0.17.4
+
+# --- utilities imported in core code paths ---
+vctoolkit==0.1.16.0
+
+gdown
